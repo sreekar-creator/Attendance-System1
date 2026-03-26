@@ -36,6 +36,13 @@
 			<scope>runtime</scope>
 		</dependency>
 
+		<!-- PostgreSQL Driver (For Render Cloud Deployment) -->
+		<dependency>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
 		<!-- Lombok to reduce boilerplate (Optional but useful, leaving out if not strictly requested, but good standard. Will leave out to keep it pure Java as requested unless needed, actually Spring Boot apps usually use it. I'll omit lombok and use explicit getters/setters for clarity.) -->
 
 		<dependency>
