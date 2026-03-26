@@ -1,0 +1,24 @@
+.git
+.gitignore
+.dockerignore
+.env
+
+# Ignore Java compiled files
+target/
+*.jar
+*.class
+
+# Ignore Frontend local system files
+frontend/
+src/main/frontend/node/
+src/main/frontend/node_modules/
+src/main/frontend/dist/
+src/main/frontend/.env
+
+# Ignore IDE files
+.idea/
+.vscode/
+*.iml
+.settings/
+.classpath
+.project
