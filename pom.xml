@@ -60,6 +60,7 @@
 				<configuration>
 					<workingDirectory>src/main/frontend</workingDirectory>
 					<nodeVersion>v20.11.1</nodeVersion>
+					<skip>${skip.frontend}</skip>
 				</configuration>
 				<executions>
 					<execution>
