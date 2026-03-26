@@ -8,12 +8,12 @@ target/
 *.jar
 *.class
 
-# Ignore Frontend local system files
-frontend/
-src/main/frontend/node/
-src/main/frontend/node_modules/
-src/main/frontend/dist/
-src/main/frontend/.env
+# Ignore Frontend local system files safely
+frontend/node/
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+src/main/frontend/
 
 # Ignore IDE files
 .idea/
