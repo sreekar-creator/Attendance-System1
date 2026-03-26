@@ -1,11 +1,15 @@
-# Stage 1: Build the React Frontend natively using the official Node container
+# Stage 1: Build the Real React Frontend natively
 FROM node:20 AS frontend-build
 WORKDIR /app/frontend
 
-# Install dependencies and build
-COPY frontend/package*.json ./
+# Copy the exact nested package and install
+COPY src/main/frontend/package*.json ./
 RUN npm install
-COPY frontend ./
+
+# Copy all the real React code
+COPY src/main/frontend ./
+
+# Build the app (Vite is configured to output directly to ../resources/static)
 RUN npm run build
 
 # Stage 2: Build the Java Backend cleanly
@@ -18,7 +22,7 @@ COPY src ./src
 
 # Create the static folder and copy the built frontend directly into Spring Boot
 RUN mkdir -p src/main/resources/static
-COPY --from=frontend-build /app/frontend/dist /app/src/main/resources/static
+COPY --from=frontend-build /app/resources/static /app/src/main/resources/static
 
 # Build the Java server securely
 RUN mvn clean package -DskipTests -Dskip.frontend=true
