@@ -8,12 +8,12 @@ target/
 *.jar
 *.class
 
-# Ignore dummy root and node modules safely
-frontend/
-src/main/frontend/node/
-src/main/frontend/node_modules/
-src/main/frontend/dist/
-src/main/frontend/.env
+# Ignore dummy root and node modules safely (anchored to root so it doesn't delete the real one)
+/frontend/
+/src/main/frontend/node/
+/src/main/frontend/node_modules/
+/src/main/frontend/dist/
+/src/main/frontend/.env
 
 # Ignore IDE files
 .idea/
