@@ -1,0 +1,15 @@
+name: Keep Alive Render
+
+on:
+  schedule:
+    # Run every 10 minutes (cron syntax: minute hour day month weekday)
+    - cron: '*/10 * * * *'
+  workflow_dispatch: # Allows manual trigger
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Render Website
+        run: |
+          curl -s https://attendance-system1-2-6am7.onrender.com/api/ping
